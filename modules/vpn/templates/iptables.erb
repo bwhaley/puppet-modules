@@ -1,0 +1,6 @@
+*nat
+:PREROUTING ACCEPT 
+:OUTPUT ACCEPT 
+:POSTROUTING ACCEPT 
+-A POSTROUTING -s <%=source_subnet%> ! -d <%=dest_subnet%> -j MASQUERADE 
+COMMIT

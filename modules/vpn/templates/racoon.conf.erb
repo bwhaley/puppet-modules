@@ -1,0 +1,41 @@
+path include "/etc/racoon";
+path pre_shared_key "/etc/racoon/psk.txt";
+path certificate "/etc/racoon/certs";
+path script "/etc/racoon/scripts";
+log info;
+
+sainfo anonymous
+{
+  #pfs_group 2;
+  lifetime time 1 hour ;
+  encryption_algorithm 3des, blowfish 448, rijndael ;
+  authentication_algorithm hmac_sha1, hmac_md5 ;
+  compression_algorithm deflate ;
+}
+
+# AWS Tunnel 1
+remote <%=endpoint%> {
+        exchange_mode main;
+        lifetime time 28800 seconds;
+        proposal {
+                encryption_algorithm aes128;
+                hash_algorithm sha1;
+                authentication_method pre_shared_key;
+                dh_group 2;
+        }
+        generate_policy off;
+
+        dpd_delay 10;
+        dpd_retry 3;
+}
+
+
+sainfo address <%=local_address%>/30 any address <%=peer_address%>/30 any {
+    pfs_group 2;
+    lifetime time 3600 seconds;
+    encryption_algorithm aes128;
+    authentication_algorithm hmac_sha1;
+    compression_algorithm deflate;
+}
+
+

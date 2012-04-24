@@ -1,0 +1,20 @@
+hostname <%=hostname%>
+password <%=bgp_passwd%>
+enable password <%=bgp_passwd%>
+!
+log file /var/log/quagga/bgpd
+debug bgp events
+debug bgp zebra
+debug bgp updates
+!
+router bgp <%=bgp_asn%>
+bgp router-id <%=ec2_public_ipv4%>
+network <%=local_address%>/30
+network 0.0.0.0/0
+!
+! aws tunnel #1 neighbour
+neighbor <%=peer_address%> remote-as 7224
+!
+line vty
+
+

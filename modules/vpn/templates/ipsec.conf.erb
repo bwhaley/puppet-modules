@@ -1,0 +1,17 @@
+flush;
+spdflush;
+
+# Establish ipsec security policies 
+
+spdadd <%=local_address%>/30 <%=peer_address%>/30 any -P out ipsec
+   esp/tunnel/<%=ipaddress%>-<%=endpoint%>/require;
+
+spdadd <%=peer_address%>/30 <%=local_address%>/30 any -P in ipsec
+   esp/tunnel/<%=endpoint%>-<%=ipaddress%>/require;
+
+spdadd <%=source_subnet%> <%=dest_subnet%> any -P out ipsec
+   esp/tunnel/<%=ipaddress%>-<%=endpoint%>/require;
+
+spdadd <%=dest_subnet%> <%=source_subnet%> any -P in ipsec
+   esp/tunnel/<%=endpoint%>-<%=ipaddress%>/require;
+
