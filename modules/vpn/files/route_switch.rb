@@ -1,6 +1,9 @@
 #!/usr/bin/ruby
 
 require 'rubygems'
+
+# First install nokogiri (http://ow.ly/atZIc)
+# Then gem install aws-sdk
 require 'aws-sdk'
 
 unless ARGV.length == 3 then
