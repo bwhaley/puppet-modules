@@ -4,6 +4,8 @@
 #                    Tunnel 2 -> AWS VPC End Point #2           Ignored
 #   Linux Box #2     Tunnel 1 -> AWS VPC End Point #1           Ignored
 #                    Tunnel 2 -> AWS VPC End Point #2           Established
+#
+# This instance can also be used as a NAT for nodes in private subnets
 
 
 # TODO: Use Nagios EventHandlers to automatically switch routing if an instance fails
