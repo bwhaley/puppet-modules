@@ -18,7 +18,7 @@ to=ARGV.shift
 ec2=AWS::EC2.new(
   :access_key_id  => "<ec2 access key>",
   :secret_access_key  => "<ec2 secret key>"
-  ).regions['us-west-2']
+  ).regions["<region>"]
 
 ec2.route_tables.each { |table| 
   table.routes.each { |route|
