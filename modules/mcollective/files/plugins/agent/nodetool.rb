@@ -13,6 +13,7 @@ module MCollective
           'repair',
           'info',
           'netstats'
+          'compactionstats'
         ].each do |act|
         action act do
           run_nodetool act

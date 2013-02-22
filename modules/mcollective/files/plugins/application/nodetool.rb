@@ -12,16 +12,17 @@ class MCollective::Application::Nodetool<MCollective::Application
   end
 
   def docs
-    puts "Usage: #{$0} nodetool <cmd>"
+    puts "Usage: #{$0} <cmd>"
     puts "Available commands:"
     puts "  ring                   - Print informations on the token ring"
     puts "  info                   - Print node informations (uptime, load, ...)"
     puts "  cfstats                - Print statistics on column families"
-    puts "  repair                 - Run repair on a node"
+    puts "  compactionstats        - Print statistics on compactions"
     puts "  version                - Print cassandra version"
     puts "  netstats               - Print network information on provided host (connecting node by default)"
     puts "  snapshot <name>        - Take a snapshot with the given <name>"
     puts "  clearsnapshot          - Remove all snapshots"
+    puts "  repair                 - Run repair on a node"
   end
 
   def main

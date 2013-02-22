@@ -2,8 +2,8 @@ metadata :name        => "nodetool",
          :description => "Performs certain Cassandra nodetool operations",
          :author      => "Ben Whaley",
          :license     => "MIT",
-         :version     => "1.0",
-         :url         => "enterprise.apigee.com",
+         :version     => "1.01",
+         :url         => "www.apigee.com",
          :timeout     => 1200
 
 action 'snapshot', :description => "initiate snapshot of all keyspaces with name <name>" do
@@ -93,3 +93,14 @@ action 'netstats', :description => "Print network information on provided host" 
          :description => "Return status of nodetool netstats",
          :display_as  => "Return Status"
 end
+
+action 'compactionstats', :description => "Print statistics on compactions" do
+  output :output,
+         :description => "Output from nodetool compactionstats",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool compactionstats",
+         :display_as  => "Return Status"
+end
+
