@@ -12,7 +12,7 @@ module MCollective
           'version',
           'repair',
           'info',
-          'netstats'
+          'netstats',
           'compactionstats'
         ].each do |act|
         action act do
