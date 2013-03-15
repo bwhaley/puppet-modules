@@ -12,6 +12,11 @@ module MCollective
           'version',
           'repair',
           'info',
+          'disablegossip',
+          'enablegossip',
+          'disablethrift',
+          'enablethrift',
+          'drain',
           'netstats',
           'compactionstats'
         ].each do |act|

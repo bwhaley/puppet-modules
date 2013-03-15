@@ -2,7 +2,7 @@ metadata :name        => "nodetool",
          :description => "Performs certain Cassandra nodetool operations",
          :author      => "Ben Whaley",
          :license     => "MIT",
-         :version     => "1.01",
+         :version     => "1.",
          :url         => "www.apigee.com",
          :timeout     => 1200
 
@@ -51,6 +51,66 @@ action 'cfstats', :description => "Print statistics on column families" do
 
   output :status,
          :description => "Return status of nodetool cfstats",
+         :display_as  => "Return Status"
+end
+
+action 'info', :description => "Print node informations (uptime, load, ...)" do
+  output :output,
+         :description => "Output from nodetool info",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool info",
+         :display_as  => "Return Status"
+end
+
+action 'drain', :description => "Drain the node (stop accepting writes and flush all column families)" do
+  output :output,
+         :description => "Output from nodetool drain",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool drain",
+         :display_as  => "Return Status"
+end
+
+action 'disablegossip', :description => "Disable gossip (effectively marking the node dead)" do
+  output :output,
+         :description => "Output from nodetool disablegossip",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool disablegossip",
+         :display_as  => "Return Status"
+end
+
+action 'enablegossip', :description => "Reenable gossip" do
+  output :output,
+         :description => "Output from nodetool enablegossip",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool enablegossip",
+         :display_as  => "Return Status"
+end
+
+action 'disablethrift', :description => "Disable thrift server" do
+  output :output,
+         :description => "Output from nodetool disablethrift",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool disablethrift",
+         :display_as  => "Return Status"
+end
+
+action 'enablethrift', :description => "Reenable thrift server" do
+  output :output,
+         :description => "Output from nodetool enablethrift",
+         :display_as  => "Output"
+
+  output :status,
+         :description => "Return status of nodetool enablethrift",
          :display_as  => "Return Status"
 end
 
